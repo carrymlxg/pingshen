@@ -1,0 +1,19 @@
+/*
+* @Author: Administrator
+* @Date:   2017-08-21 01:02:59
+* @Last Modified by:   梁飞
+* @Last Modified time: 2017-08-31 22:33:27
+*/
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+}
+body{
+	background: #ffffff;
+}

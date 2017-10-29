@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-3.2.1.js"></script>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	html,body{
+		width: 100%;
+		height: 100%;
+	}
+	body{
+		background-image: url('img/timg.jpg');
+		background-position: center;
+		background-size: cover;
+	}
+	.table{
+		width: 800px;
+		height: 700px;
+		margin:20px auto;
+		position: relative;
+	}
+	.poke{
+		width: 90px;
+		height: 140px;
+		border-radius: 10px;
+		background: #fff;
+		position: absolute;
+		top: 0;
+		left: 305px;
+		background-position: center;
+		background-size: cover;
+	}
+	.faguang{
+		box-shadow: 0 0 0 3px #00bfff;
+	}
+	button{
+		width: 80px;
+		height: 30px;
+		border-radius: 5px;
+		background: #00bfff;
+		position: absolute;
+		left: calc(50% - 40px)
+	}
+	button:focus{
+		outline: none;
+	}
+	.R{
+		bottom: 20px;
+	}
+	.L{
+		bottom: 60px;
+	}
+</style>
+<body>
+	<div class="table">
+		<button class="L">L</button>
+	<button class="R">R</button>
+	</div>
+	
+</body>
+<script src="poke.js"></script>
+</html>

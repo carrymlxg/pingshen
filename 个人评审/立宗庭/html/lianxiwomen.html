@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>联系我们</title>
+	<link rel="stylesheet" href="../css/lianxiwomen.css">
+	<link rel="stylesheet" href="../css/response.css">
+	<link rel="stylesheet" href="../iconfont/iconfont.css">
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="百度地图,百度地图API，百度地图自定义工具，百度地图所见即所得工具" />
+    <meta name="description" content="百度地图API自定义地图，帮助用户在可视化操作下生成百度地图" />
+    <title>百度地图API自定义地图</title>
+    <!--引用百度地图API-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
+	<script src="../js/jquery-3.2.1.js"></script>
+	<script src="../js/jquery.js"></script>
+</head>
+<body>
+	<section class="log">
+		<div>
+			<div class="log">
+				<a href="">登录</a>
+				|
+				<a href="">注册</a>
+			</div>
+		</div>
+	</section>
+	<section class="column">
+		<a href="shouye.html" class="logo"><img src="../img/30ef971e10fb93680815cfab8ee14e5c.png" alt=""></a>
+		<div class="sousuo">
+			<input type="text" name="name" placeholder="请输入关键字">
+			<button>全站搜索</button>
+		</div>
+		<div class="tel">
+			<span class="iconfont icon-dianhua"></span>
+			<span>18254250777</span>
+		</div>
+	</section>
+	<section class="column1">
+		<a href="shouye.html" class="logo"><img src="../img/logo.png" alt=""></a>
+		<div class="iconfont icon-mianbaoxiedaohangxiaoxian"></div>
+	</section>
+	<ul class="caidan">
+			<li><a href="shouye.html">首页</a></li>
+			<li><a href="guanyu.html">关于立宗庭</a></li>
+			<li><a href="caidan.html">立宗庭菜单</a></li>
+			<li><a href="jiameng.html">加盟流程</a></li>
+			<li><a href="youshi.html">加盟优势</a></li>
+			<li><a href="mendian.html">门店展示</a></li>
+			<li><a href="lianxiwomen.html">联系我们</a></li>
+			<li><a href="liuyan.html">留言反馈</a></li>
+	</ul>
+	<div class="guanbi">
+		<div class="iconfont icon-guanbi"></div>
+	</div>
+	<nav>
+		<div class="neikuan">
+			<div class="zhaopai"><span>立宗庭菜单</span></div>
+			<ul class="nav">
+			<li><a href="shouye.html">首页</a></li>
+			<li><a href="guanyu.html">关于立宗庭</a></li>
+			<li><a href="caidan.html">立宗庭菜单</a></li>
+			<li><a href="jiameng.html">加盟流程</a></li>
+			<li><a href="youshi.html">加盟优势</a></li>
+			<li><a href="mendian.html">门店展示</a></li>
+			<li><a href="lianxiwomen.html">联系我们</a></li>
+			<li><a href="liuyan.html">留言反馈</a></li>
+			</ul>
+		</div>
+	</nav>
+	<section class="banner">
+		<ul class="imglist">
+			<li><a href=""><img src="../img/banner.png" alt=""></a></li>
+			<li><a href=""><img src="../img/banner2.png" alt=""></a></li>
+			<li><a href=""><img src="../img/banner3.png" alt=""></a></li>
+		</ul>
+		<ul class="btnlist">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	<div class="bashou zuo"><span class="iconfont icon-zuo"></span></div>
+		<div class="bashou you"><span class="iconfont icon-you"></span></div>
+	</section>
+	<main>
+		<section class="zhanshi">
+			<div class="title"><span>产品展示</span></div>
+			<ul>
+			<li><a href="caidan.html">明星套餐</a></li>
+			<li><a href="caidan.html">日式饭类-丼</a></li>
+			<li><a href="caidan.html">美味咖喱饭</a></li>
+			<li><a href="caidan.html">风味炒饭</a></li>
+			<li><a href="caidan.html">风情小食</a></li>
+			<li><a href="caidan.html">佐餐沙拉</a></li>
+			<li><a href="caidan.html">列国拉面</a></li>
+		</ul>
+		</section>
+		<section class="weizhi">
+			<div class="title"><span>您的当前位置:</span><a href="shouye.html">首页</a><span class="iconfont icon-you"></span><a href="lianxiwomen.html">联系我们</a></div>
+			<ul>
+				<li class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div>
+						<span>叉烧至尊套餐</span>
+						<p>联系人：宗琦</p>
+						<p>订餐热线：18254250777</p>
+						<p>加盟热线：18254250777</p>
+						<p>市北区店面：	辽宁路167号颐高数码广场一层A1055</p>
+					</div>
+				</li>
+				<li class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div style="width:100%;height:100%;border:#ccc solid 1px;font-size:12px" id="map"></div>
+				</li>
+			</ul>
+			
+  </body>
+  <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap(){ 
+      map = new BMap.Map("map"); 
+      map.centerAndZoom(new BMap.Point(120.33879,36.087947),17);
+    }
+    function setMapEvent(){
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target,window){
+      target.addEventListener("click",function(){
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay(){
+      var markers = [
+        {content:"地址：青岛市市北区辽宁路167号颐高数码广场一层A1055 热线：18254250777",title:"市北区立宗庭多国料理店",imageOffset: {width:0,height:3},position:{lat:36.088327,lng:120.339167}}
+      ];
+      for(var index = 0; index < markers.length; index++ ){
+        var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);
+        var marker = new BMap.Marker(point,{icon:new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png",new BMap.Size(20,25),{
+          imageOffset: new BMap.Size(markers[index].imageOffset.width,markers[index].imageOffset.height)
+        })});
+        var label = new BMap.Label(markers[index].title,{offset: new BMap.Size(25,5)});
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content,opts);
+        marker.setLabel(label);
+        addClickHandler(marker,infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl(){
+      var scaleControl = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+      map.addControl(navControl);
+      var overviewControl = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:true});
+      map.addControl(overviewControl);
+    }
+    var map;
+      initMap();
+  </script>
+		</section>						
+	</main>
+	<footer>
+		<div>
+		<span>市北区立宗庭多国料理店:专营&nbsp;</span>
+		<ul>
+		<li><a href="caidan.html">明星套餐</a></li>
+		<li><a href="caidan.html">日式饭类-丼</a></li>
+		<li><a href="caidan.html">美味咖喱饭</a></li>
+		<li><a href="caidan.html">风味炒饭</a></li>
+		<li><a href="caidan.html">风情小食</a></li>
+		<li><a href="caidan.html">佐餐沙拉</a></li>
+		<li><a href="caidan.html">列国拉面</a></li>
+		</ul>
+		<span>等业务，有意的客户请咨询我们</span><br>
+		<p>联系电话:18254250777</p>
+		<p>CopyRight&copy;<a href="">市北区立宗庭多国料理店</a>技术支持<a href="">兆通科技·搜狗潍坊运营中心</a></p>
+		</div>
+	</footer>
+</body>
+</html>
+<script src="../js/animate.js"></script>
